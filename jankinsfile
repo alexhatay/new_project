@@ -1,10 +1,9 @@
-properties([[$class: 'JiraProjectProperty'], parameters([string(defaultValue: '31', description: '', name: 'NAME', trim: false)]), pipelineTriggers([pollSCM('* * * * *')])])
-node {
+properties([parameters([string(defaultValue: 'alex', description: '', name: 'name', trim: false)])])
+node{
     stage("clone"){
-        git "https://github.com/avielb/DevOps0803.git"
+        git "https://github.com/alexhatay/new_project.git"
     }
-    stage("show"){
-        sh "ls"
-       // bat "dir"
+    stage("shown"){
+        bat "dir"
     }
 }
