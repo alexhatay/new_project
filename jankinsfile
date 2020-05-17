@@ -1,3 +1,4 @@
+properties([parameters([string(defaultValue: 'alex', description: '', name: 'name', trim: false)])])
 node{
     stage("clone"){
         git "https://github.com/alexhatay/new_project.git"
